@@ -27,6 +27,37 @@ public class App
 
 
     }
+    public static void Game( String[] args )
+    {
+        //region Игра "Угадай число"
+        int UserNumber, CompNumber,  count = 0;
+        final int lifeCount = 7;
+        System.out.println("Игра 'Угадайка'. Угадай число (от 0 до 100). У тебя 5 жизней. Удачи!");
+        Scanner input = new Scanner(System.in);
+        CompNumber  = (int)Math.floor(Math.random()*100);
+        do{
+            count++;
+            if(count > lifeCount)
+            {
+                System.out.print("ТЫ потратил все свои жизни! До скорой встречи!! ");
+                break;
+            }
+            System.out.print("Введите ваше число: ");
+            UserNumber = input.nextInt();
+
+            if(UserNumber> CompNumber )
+                System.out.println("Мое число меньше.");
+
+            else if(UserNumber < CompNumber )
+                System.out.println("Мое число больше.");
+
+            else
+                System.out.println("!!!!Вы угадали!!!");
+        }
+        while (UserNumber != CompNumber);
+        System.out.println("Количество попыток:" + count);
+        //endregion
+    }
     public static void Hello( String[] args )
     {
         // region Переменные и типы данных
@@ -78,34 +109,7 @@ public class App
 //        System.out.printf( "x=%d, s= %s %n",x,s );
         //endregion
 
-        //region Игра "Угадай число"
-        int UserNumber, CompNumber,  count = 0;
-        final int lifeCount = 7;
-        System.out.println("Игра 'Угадайка'. Угадай число (от 0 до 100). У тебя 5 жизней. Удачи!");
-        Scanner input = new Scanner(System.in);
-        CompNumber  = (int)Math.floor(Math.random()*100);
-        do{
-            count++;
-            if(count > lifeCount)
-            {
-                System.out.print("ТЫ потратил все свои жизни! До скорой встречи!! ");
-                break;
-            }
-            System.out.print("Введите ваше число: ");
-            UserNumber = input.nextInt();
 
-            if(UserNumber> CompNumber )
-                System.out.println("Мое число меньше.");
-
-            else if(UserNumber < CompNumber )
-                System.out.println("Мое число больше.");
-
-            else
-                System.out.println("!!!!Вы угадали!!!");
-        }
-        while (UserNumber != CompNumber);
-        System.out.println("Количество попыток:" + count);
-        //endregion
 
     }
 }
