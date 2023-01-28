@@ -32,7 +32,7 @@ public class App
         //region Игра "Угадай число"
         int UserNumber, CompNumber,  count = 0;
         final int lifeCount = 7;
-        System.out.println("Игра 'Угадайка'. Угадай число (от 0 до 100). У тебя 5 жизней. Удачи!");
+        System.out.println("Игра 'Угадайка'. Угадай число (от 0 до 100). У тебя 7 жизней. Удачи!");
         Scanner input = new Scanner(System.in);
         CompNumber  = (int)Math.floor(Math.random()*100);
         do{
