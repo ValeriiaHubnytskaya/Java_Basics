@@ -3,7 +3,9 @@ package ITStep.learning;
 import ITStep.learning.oop.Book;
 import ITStep.learning.oop.Journal;
 import ITStep.learning.oop.Library;
+import ITStep.learning.oop.Newspaper;
 
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,6 +21,8 @@ public class App
     library.add(new Book("Shevchenko","Kobzar"));
     library.add(new Journal(10,"ArgC & ArgV"));
     library.add(new Journal(5,"Nature"));
+    library.add(new Newspaper(2022, 12, 28, "The Times"));
+    library.add(new Newspaper(2022, 12, 28, "Positive News"));
     library.printFunds();
 
 
