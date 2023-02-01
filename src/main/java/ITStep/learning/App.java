@@ -1,10 +1,8 @@
 package ITStep.learning;
 
-import ITStep.learning.oop.Book;
-import ITStep.learning.oop.Journal;
-import ITStep.learning.oop.Library;
-import ITStep.learning.oop.Newspaper;
+import ITStep.learning.oop.*;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
@@ -21,11 +19,15 @@ public class App
     library.add(new Book("Shevchenko","Kobzar"));
     library.add(new Journal(10,"ArgC & ArgV"));
     library.add(new Journal(5,"Nature"));
-    library.add(new Newspaper(2022, 12, 28, "The Times"));
-    library.add(new Newspaper(2022, 12, 28, "Positive News"));
-    library.printFunds();
 
-
+    try{
+        library.add(new Newspaper( "12.12.2022", "The Times"));
+        library.add(new Newspaper("13.12.2022", "Positive News"));
+        library.add(new Comics("Marvel", 1, "14.12.2022"));
+    } catch (ParseException ignored) {
+        System.err.println("Date parse error!!!!");
+    }
+        library.printFunds();
     }
     public static void Game( String[] args )
     {
@@ -58,6 +60,7 @@ public class App
         System.out.println("Количество попыток:" + count);
         //endregion
     }
+
     public static void Hello( String[] args )
     {
         // region Переменные и типы данных
