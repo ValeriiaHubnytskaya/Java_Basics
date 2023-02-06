@@ -24,7 +24,7 @@ public class App
 
     }
 
-    public static void oop( String[] args ){
+    public static void oop( String[] args ) throws ParseException {
 
             Library library = new Library();
             library.add(new Book("Knuth", "Art of programming"));
@@ -41,13 +41,15 @@ public class App
                 System.err.println("Date parse error!!!!");
             }
             library.add(new AudioBook("Kobzar. Shevchenko", "SuperSound Studio"));
+            library.add(new Hologram("15.12.2022", "Hologram"));
             library.printFunds();
 
             System.out.println( "-----------------------------------------" ) ;
             library.showPrinted() ;
             System.out.println( "-----------------------------------------" ) ;
             library.playAll() ;
-
+            System.out.println( "-----------------------------------------" ) ;
+            library.showPresentable();
 
     }
 

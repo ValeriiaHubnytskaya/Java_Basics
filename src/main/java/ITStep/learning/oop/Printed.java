@@ -1,4 +1,4 @@
 package ITStep.learning.oop;
 
-public interface Printed {
+public interface Printed { //интерфейс маркер
 }
