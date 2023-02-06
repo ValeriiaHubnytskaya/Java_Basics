@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class Newspaper extends Literature{
+public class Newspaper extends Literature implements Printed{
     private Date date;
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.y");
 

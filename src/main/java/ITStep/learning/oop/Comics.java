@@ -4,11 +4,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Comics extends Literature {
+public class Comics extends Literature implements Printed{
     private int number;
     private Date date;
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.y");
-    public Comics( String title, int number, String  date) throws ParseException {
+
+    public Comics() {
+
+    }
+
+    public Comics(String title, int number, String  date) throws ParseException {
         super.setTitle(title);
         this.number = number;
         this.date = dateFormat.parse(date);

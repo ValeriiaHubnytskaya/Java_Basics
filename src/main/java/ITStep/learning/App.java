@@ -1,7 +1,11 @@
 package ITStep.learning;
 
+import ITStep.learning.db.DbDemo;
+import ITStep.learning.files.DirDemo;
+import ITStep.learning.files.IoDemo;
 import ITStep.learning.oop.*;
 
+import java.io.File;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Random;
@@ -14,21 +18,39 @@ import java.util.Scanner;
 public class App 
 {
     public static void main( String[] args ){
-    Library library = new Library();
-    library.add(new Book("Knuth", "Art of programming"));
-    library.add(new Book("Shevchenko","Kobzar"));
-    library.add(new Journal(10,"ArgC & ArgV"));
-    library.add(new Journal(5,"Nature"));
+        new DbDemo().run();
+//        new IoDemo().run() ;
+//        new DirDemo().run() ;
 
-    try{
-        library.add(new Newspaper( "12.12.2022", "The Times"));
-        library.add(new Newspaper("13.12.2022", "Positive News"));
-        library.add(new Comics("Marvel", 1, "14.12.2022"));
-    } catch (ParseException ignored) {
-        System.err.println("Date parse error!!!!");
     }
-        library.printFunds();
+
+    public static void oop( String[] args ){
+
+            Library library = new Library();
+            library.add(new Book("Knuth", "Art of programming"));
+            library.add(new Book("Shevchenko","Kobzar"));
+            library.add(new Journal(10,"ArgC & ArgV"));
+            library.add(new Journal(5,"Nature"));
+
+            try{
+                library.add(new Newspaper( "12.12.2022", "The Times"));
+                library.add(new Newspaper("13.12.2022", "Positive News"));
+                library.add(new Comics("Marvel", 1, "14.12.2022"));
+            }
+            catch (ParseException ignored) {
+                System.err.println("Date parse error!!!!");
+            }
+            library.add(new AudioBook("Kobzar. Shevchenko", "SuperSound Studio"));
+            library.printFunds();
+
+            System.out.println( "-----------------------------------------" ) ;
+            library.showPrinted() ;
+            System.out.println( "-----------------------------------------" ) ;
+            library.playAll() ;
+
+
     }
+
     public static void Game( String[] args )
     {
         //region Игра "Угадай число"
