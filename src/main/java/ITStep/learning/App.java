@@ -3,7 +3,10 @@ package ITStep.learning;
 import ITStep.learning.db.DbDemo;
 import ITStep.learning.files.DirDemo;
 import ITStep.learning.files.IoDemo;
+import ITStep.learning.ioc.AppModule;
+import ITStep.learning.ioc.Starter;
 import ITStep.learning.oop.*;
+import com.google.inject.Guice;
 
 import java.io.File;
 import java.text.ParseException;
@@ -18,7 +21,13 @@ import java.util.Scanner;
 public class App 
 {
     public static void main( String[] args ){
-        new DbDemo().run();
+        Guice.createInjector(new AppModule())
+                .getInstance(Starter.class)
+                .run();
+
+    }
+    public static void db_files( String[] args ){
+          new DbDemo().run();
 //        new IoDemo().run() ;
 //        new DirDemo().run() ;
 
